@@ -4,7 +4,7 @@ public Map<String, Decimal> industrySummary(List<Account> accounts) {
         if(acc.Industry != null && !mapOfIndustryVsRevenue.containsKey(acc.Industry)){
             mapOfIndustryVsRevenue.put(acc.Industry, 0);
         }
-        mapOfIndustryVsRevenue.get(acc.Industry) = mapOfIndustryVsRevenue.get(acc.Industry) + acc.AnnualRevenue;
+        mapOfIndustryVsRevenue.put(acc.Industry, mapOfIndustryVsRevenue.get(acc.Industry) + acc.AnnualRevenue);
     }
     return mapOfIndustryVsRevenue;
 }
