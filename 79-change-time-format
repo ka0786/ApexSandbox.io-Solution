@@ -1,0 +1,8 @@
+public String changeTimeFormat(String strTime) {
+    List<String> strTimeSplit = strTime.split(':');
+    Integer hoursHand = Integer.valueOf(strTimeSplit.get(0));
+    Integer changedHoursHand = hoursHand < 13 ? hoursHand == 0 ? 12 : hoursHand : hoursHand-12;
+    String amPm = hoursHand < 12 ? 'AM' : 'PM';
+    String zeroAppend = changedHoursHand < 10 ? '0' : '';
+    return zeroAppend+String.valueOf(changedHoursHand)+':'+strTimeSplit.get(1)+' '+amPm;
+}
