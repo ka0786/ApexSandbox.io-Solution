@@ -1,0 +1,12 @@
+public List<Account> getAccountsFromJSONString(String inputJSON){
+    if(inputJSON == null || inputJSON == '') return null;
+    List<Object> objectList = (List<Object>)JSON.deserializeUntyped(inputJSON);
+    List<Account> listOfAccount = new List<Account>();
+
+    for(Object obj : objectList){
+        String cObjJsonDrunk = JSON.serialize(obj);
+        SObject customObject = (SObject)JSON.deserialize(cObjJsonDrunk, Sobject.class);
+        listOfAccount.add((Account)customObject);
+    }
+    return listOfAccount;
+}
