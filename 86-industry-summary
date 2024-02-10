@@ -6,4 +6,5 @@ public Map<String, Decimal> industrySummary(List<Account> accounts) {
         }
         mapOfIndustryVsRevenue?.get(acc.Industry) += acc.AnnualRevenue;
     }
+    return mapOfIndustryVsRevenue;
 }
