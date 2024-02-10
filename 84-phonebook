@@ -1,0 +1,10 @@
+public Map<String, String> phonebook(List<Contact> contacts) {
+    Map<String, String> mapOfNameVsPhone = new Map<String, String>();
+    for(Contact con : contacts){
+        if(!mapOfNameVsPhone.containsKey(con.FirstName + ' ' + con.LastName)){
+            if(con.Phone == null) continue;
+            mapOfNameVsPhone.put(con.FirstName + ' ' + con.LastName, String.valueOf(con.Phone));
+        }
+    }
+    return mapOfNameVsPhone;
+}
