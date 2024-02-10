@@ -1,0 +1,7 @@
+public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> contacts)
+{
+    List<sObject> newList = new List<sObject>();
+    if(accounts != null) newList.addAll(accounts);
+    if(contacts != null) newList.addAll(contacts);
+    return newList;
+}
