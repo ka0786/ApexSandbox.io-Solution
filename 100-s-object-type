@@ -1,4 +1,4 @@
 public Boolean isTypeAccount(sObject record)
 {
-    // code here
+    return sObject.getSObjectType() == 'Account'
 }
