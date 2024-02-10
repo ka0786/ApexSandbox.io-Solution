@@ -1,0 +1,16 @@
+public Id classFromCourse(String courseName) {
+    List<apxio__Course__c> existingCourses = [
+        SELECT
+            Id, Name
+        FROM apxio__Course__c
+        WHERE Name = :courseName
+        LIMIT 1
+    ];
+    if(existingCourses.isEmpty()) return null;
+    apxio__Class__c newClass = new apxio__Class__c(
+        Name = courseName,
+        apxio__Course__c = !existingCourses.isEmpty() ? existingCourses[0]?.Id : null
+    );
+
+    return Database.insert(newClass).getId();
+}
