@@ -1,0 +1,12 @@
+public List<String> getFieldsValue(Account acc, List<String> fields)
+{
+    List<String> listOfOutputs = new List<String>();
+    for (String str : fields) {
+        if (String.isBlank(str)) {
+            listOfOutputs.add(null);
+            continue;
+        }
+        listOfOutputs.add(String.valueOf(acc?.get(str)));
+    }
+    return listOfOutputs;
+}
