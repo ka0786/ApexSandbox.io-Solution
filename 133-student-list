@@ -1,0 +1,12 @@
+public void insertStudents(List<String> studentNames, List<String> studentEmails) {
+    List<apxio__Student__c> newStudentList = new List<apxio__Student__c>();
+    for(Integer i=0; i<studentNames.size(); i++){
+        newStudentList.add(new apxio__Student__c(
+            Name = studentNames[i],
+            apxio__Email__c = studentEmails[i]
+            )
+        );
+    }
+
+    Database.insert(newStudentList,false);
+}
