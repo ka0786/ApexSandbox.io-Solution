@@ -1,0 +1,16 @@
+public Map<String,String> getContextUserInformation(){
+    User userObj = [
+        SELECT
+            UserName, ProfileId, UserType , Email
+        FROM User
+        WHERE Id = :UserInfo.getUserId()
+        ];
+    Map<String,Object> mp = (Map<String,Object>)userObj.getPopulatedFieldsAsMap();
+    Map<String,String> returnedMap = new Map<String,String>();
+    returnedMap.put('EmailId', (String)mp.get('Email'));
+    returnedMap.put('ProfileId', (String)mp.get('ProfileId'));
+    returnedMap.put('Type', (String)mp.get('UserType'));
+    returnedMap.put('UserName', (String)mp.get('Username'));
+    
+    return returnedMap;
+}
