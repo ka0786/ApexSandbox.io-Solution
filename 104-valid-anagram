@@ -1,15 +1,15 @@
 public boolean isAnagram(String s1, String s2) {
-    //if(s1 == null || s2 == null) return false;
+    if(s1 == null || s2 == null) return false;
     Map<String, Integer> mapOfStrVsInt1 = new Map<String, Integer>();
     Map<String, Integer> mapOfStrVsInt2 = new Map<String, Integer>();
     Boolean flag = true;
 
-    for(String s : s1?.split('') ?? new List<String>()){
+    for(String s : s1.split('')){
         if(!mapOfStrVsInt1.containsKey(s)) mapOfStrVsInt1.put(s, 0);
         mapOfStrVsInt1.put(s, mapOfStrVsInt1.get(s) + 1);
     }
 
-    for(String s : s2?.split('') ?? new List<String>()){
+    for(String s : s2.split('')){
         if(!mapOfStrVsInt2.containsKey(s)) mapOfStrVsInt2.put(s, 0);
         mapOfStrVsInt2.put(s, mapOfStrVsInt2.get(s) + 1);
     }
