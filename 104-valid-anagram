@@ -5,12 +5,12 @@ public boolean isAnagram(String s1, String s2) {
 
     for(String s : s1){
         if(!mapOfStrVsInt1.containsKey(s)) mapOfStrVsInt1.put(s, 0);
-        mapOfStrVsInt1.get(s) = mapOfStrVsInt1.get(s) + 1;
+        mapOfStrVsInt1.put(s, mapOfStrVsInt1.get(s) + 1);
     }
 
     for(String s : s2){
         if(!mapOfStrVsInt2.containsKey(s)) mapOfStrVsInt2.put(s, 0);
-        mapOfStrVsInt2.get(s) = mapOfStrVsInt2.get(s) + 1;
+        mapOfStrVsInt2.put(s, mapOfStrVsInt2.get(s) + 1);
     }
 
     for(String value : mapOfStrVsInt1.keySet()){
