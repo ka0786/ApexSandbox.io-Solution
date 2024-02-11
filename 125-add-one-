@@ -1,5 +1,5 @@
 public void plusOne(List<Integer> numbers) {
-    if(numbers == null || numbers.isEmpty() || numbers.size() == 1) return;
+    if(numbers == null || numbers.isEmpty()) return;
     Integer currentDigit;
     Integer digitAfterAddition;
     for(Integer i = numbers.size()-1; i > 0 ; i--){
@@ -10,5 +10,9 @@ public void plusOne(List<Integer> numbers) {
             return;
         }
         numbers[i] = 0;
+    }
+    if(digitAfterAddition == 10){
+        numbers[0] = 0;
+        numbers.set(0, 1);
     }
 }
