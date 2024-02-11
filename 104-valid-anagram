@@ -1,0 +1,23 @@
+public boolean isAnagram(String s1, String s2) {
+    Map<String, Integer> mapOfStrVsInt1 = new Map<String, Integer>();
+    Map<String, Integer> mapOfStrVsInt2 = new Map<String, Integer>();
+    Boolen flag = true;
+
+    for(String s : s1){
+        if(!mapOfStrVsInt1.containsKey(s)) mapOfStrVsInt1.put(s, 0);
+        mapOfStrVsInt1.get(s) = mapOfStrVsInt1.get(s) + 1;
+    }
+
+    for(String s : s2){
+        if(!mapOfStrVsInt2.containsKey(s)) mapOfStrVsInt2.put(s, 0);
+        mapOfStrVsInt2.get(s) = mapOfStrVsInt2.get(s) + 1;
+    }
+
+    for(String value : mapOfStrVsInt1.keySet()){
+        if(mapOfStrVsInt1.get(value) != mapOfStrVsInt2?.get(value)){
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
