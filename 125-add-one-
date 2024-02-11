@@ -11,7 +11,7 @@ public void plusOne(List<Integer> numbers) {
         }
         numbers[i] = 0;
     }
-    if(digitAfterAddition == 10 && numbers[0] == 9){
+    if(digitAfterAddition == 10 && numbers[0] == 0){
         numbers[0] = 0;
         numbers.add(0, 1);
     }
