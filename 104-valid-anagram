@@ -14,7 +14,7 @@ public boolean isAnagram(String s1, String s2) {
     }
 
     for(String value : mapOfStrVsInt1.keySet()){
-        if(mapOfStrVsInt1.get(value) != mapOfStrVsInt2?.get(value)){
+        if(mapOfStrVsInt1?.get(value) != mapOfStrVsInt2?.get(value)){
             flag = false;
             break;
         }
