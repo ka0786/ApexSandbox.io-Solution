@@ -1,0 +1,4 @@
+public Boolean isSubSequence(String s1, String s2){
+    //code here
+    return s2?.contains(s1) || s1?.contains(s2)
+}
