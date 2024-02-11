@@ -1,0 +1,20 @@
+public static Integer search(List<Opportunity> opportunities, Integer target){
+    Integer start = 0;
+    Integer last = opportunities.size() - 1;
+
+    while (start <= last) {
+        Integer mid = start + (last - start) / 2;
+
+        Decimal midAmount = opportunities[mid].Amount;
+
+        if (midAmount == target) {
+            return mid;
+        } else if (midAmount < target) {
+            start = mid + 1;
+        } else {
+            last = mid - 1;
+        }
+    }
+
+    return -1;
+}
