@@ -1,7 +1,7 @@
 public boolean isAnagram(String s1, String s2) {
     Map<String, Integer> mapOfStrVsInt1 = new Map<String, Integer>();
     Map<String, Integer> mapOfStrVsInt2 = new Map<String, Integer>();
-    Boolen flag = true;
+    Boolean flag = true;
 
     for(String s : s1){
         if(!mapOfStrVsInt1.containsKey(s)) mapOfStrVsInt1.put(s, 0);
