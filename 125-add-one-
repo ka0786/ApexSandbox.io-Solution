@@ -13,6 +13,6 @@ public void plusOne(List<Integer> numbers) {
     }
     if(digitAfterAddition == 10){
         numbers[0] = 0;
-        numbers.set(0, 1);
+        numbers.add(0, 1);
     }
 }
