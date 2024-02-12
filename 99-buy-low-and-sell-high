@@ -15,5 +15,5 @@ public Integer maxProfit(List<Integer> prices){
         if(maxSellPrice < prices[i]) maxSellPrice = prices[i];
     }
 
-    return (maxSellPrice - minimumPriceOfAStock < 0) ? 0 :  maxSellPrice - minimumPriceOfAStock;
+    return (maxSellPrice - minimumPriceOfAStock < 0) ? 0 :  (maxSellPrice - minimumPriceOfAStock);
 }
