@@ -1,19 +1,20 @@
 public Integer maxProfit(List<Integer> prices){
-    if(prices == null || prices.isEmpty()) return 0;
-    Integer minimumPriceOfAStock = 0;
+    if (prices == null || prices.isEmpty()) return 0;
+
+    Integer minimumPriceOfAStock = prices.get(0);
     Integer minimumPriceOfAStockIndex = 0;
 
-    for(Integer i=0; i<prices.size()-1; i++){
-        if(prices[i] < minimumPriceOfAStock){
-            minimumPriceOfAStock = prices[i];
+    for (Integer i = 0; i < prices.size() - 1; i++) {
+        if (prices.get(i) < minimumPriceOfAStock) {
+            minimumPriceOfAStock = prices.get(i);
             minimumPriceOfAStockIndex = i;
-        };
+        }
     }
 
     Integer maxSellPrice = 0;
-    for(Integer i=minimumPriceOfAStockIndex; i<prices.size(); i++){
-        if(maxSellPrice < prices[i]) maxSellPrice = prices[i];
+    for (Integer i = minimumPriceOfAStockIndex; i < prices.size(); i++) {
+        if (maxSellPrice < prices.get(i)) maxSellPrice = prices.get(i);
     }
 
-    return (maxSellPrice - minimumPriceOfAStock < 0) ? 0 :  (maxSellPrice - minimumPriceOfAStock);
+    return (maxSellPrice - minimumPriceOfAStock < 0) ? 0 : (maxSellPrice - minimumPriceOfAStock);
 }
