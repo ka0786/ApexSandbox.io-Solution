@@ -1,0 +1,8 @@
+public static List<Integer> squareList(List<Integer> nums){
+    List<Integer> listOfSquareList = new List<Integer>();
+    for(Integer num : nums) {
+        listOfSquareList.add(num*num);
+    }
+    
+    return listOfSquareList;
+}
