@@ -3,6 +3,6 @@ public static List<Integer> squareList(List<Integer> nums){
     for(Integer num : nums) {
         listOfSquareList.add(num*num);
     }
-    
+    listOfSquareList.sort();
     return listOfSquareList;
 }
