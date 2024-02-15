@@ -1,5 +1,5 @@
 public static void segregateEvenOdd(List<Integer> numbers){
-    if(numbers == null || numbers.size() < 2) return numbers;
+    if(numbers == null || numbers.size() < 2) return;
     Integer i = 0;
     Integer storeFirstIndexOfOdd = 0;
     while(i < numbers.size()-1) {
