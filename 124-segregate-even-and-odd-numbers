@@ -10,13 +10,13 @@ public static void segregateEvenOdd(List<Integer> numbers){
         i = i + 1;
     }
 }
-public static Integer tempValue = 0;
-public static void replaceValuesOnIndex(List<Integer> numbers, index1, index2){
+private static Integer tempValue = 0;
+private static void replaceValuesOnIndex(List<Integer> numbers, Integer index1, Integer index2){
     tempValue = numbers.get(index1);
     numbers.set(index1, numbers[index2]);
     numbers.set(index2, tempValue);
 }
 
-public static Boolean isEven(Integer num){
+private static Boolean isEven(Integer num){
     return Math.mod(value, 2) == 0;
 }
