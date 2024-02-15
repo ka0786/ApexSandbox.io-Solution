@@ -18,5 +18,5 @@ private static void replaceValuesOnIndex(List<Integer> numbers, Integer index1, 
 }
 
 private static Boolean isEven(Integer num){
-    return Math.mod(value, 2) == 0;
+    return Math.mod(num, 2) == 0;
 }
