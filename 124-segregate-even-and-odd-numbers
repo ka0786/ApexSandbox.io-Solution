@@ -3,6 +3,7 @@ public static void segregateEvenOdd(List<Integer> numbers){
     Integer i = 0;
     Integer storeFirstIndexOfOdd = 0;
     while(i < numbers.size()-1) {
+        if(storeFirstIndexOfOdd == 0 && !isEven(numbers[i]) ) storeFirstIndexOfOdd = i;
         if(!isEven(numbers[i]) && isEven(numbers[i+1])){
             if(storeFirstIndexOfOdd == 0) storeFirstIndexOfOdd = i;
             replaceValuesOnIndex(numbers, storeFirstIndexOfOdd, i+1);
