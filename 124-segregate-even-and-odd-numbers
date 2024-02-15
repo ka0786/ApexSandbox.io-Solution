@@ -4,8 +4,9 @@ public static void segregateEvenOdd(List<Integer> numbers){
     Integer storeFirstIndexOfOdd = 0;
     while(i < numbers.size()-1) {
         if(!isEven(numbers[i]) && isEven(numbers[i+1])){
-            storeFirstIndexOfOdd += 1;
+            if(storeFirstIndexOfOdd == 0) storeFirstIndexOfOdd = i;
             replaceValuesOnIndex(numbers, storeFirstIndexOfOdd, i+1);
+            storeFirstIndexOfOdd += 1;
         }
         i = i + 1;
     }
