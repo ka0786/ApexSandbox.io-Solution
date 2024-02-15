@@ -1,17 +1,13 @@
 public static void segregateEvenOdd(List<Integer> numbers){
     if(numbers == null || numbers.size() < 2) return numbers;
     Integer i = 0;
-    Integer firstValue;
-    Integer secondValue;
     Integer storeFirstIndexOfOdd = 0;
     while(i < numbers.size()-1) {
-        firstValue = numbers[i];
-        secondValue = numbers[i+1];
-        if(!isEven(firstValue) && isEven(firstValue)){
+        if(!isEven(numbers[i]) && isEven(numbers[i+1])){
             storeFirstIndexOfOdd += 1;
             replaceValuesOnIndex(numbers, storeFirstIndexOfOdd, i+1);
         }
-        i+=1;
+        i = i + 1;
     }
 }
 public static Integer tempValue = 0;
