@@ -1,0 +1,26 @@
+public static void segregateEvenOdd(List<Integer> numbers){
+    if(numbers == null || numbers.size() < 2) return numbers;
+    Integer i = 0;
+    Integer firstValue;
+    Integer secondValue;
+    Integer storeFirstIndexOfOdd = 0;
+    while(i < numbers.size()-1) {
+        firstValue = numbers[i];
+        secondValue = numbers[i+1];
+        if(!isEven(firstValue) && isEven(firstValue)){
+            storeFirstIndexOfOdd += 1;
+            replaceValuesOnIndex(numbers, storeFirstIndexOfOdd, i+1);
+        }
+        i+=1;
+    }
+}
+private static Integer tempValue = 0;
+private static void replaceValuesOnIndex(List<Integer> numbers, index1, index2){
+    tempValue = numbers.get(index1);
+    numbers.set(index1, numbers[index2]);
+    numbers.set(index2, tempValue);
+}
+
+private static Boolean isEven(Integer num){
+    return Math.mod(value, 2) == 0;
+}
